@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import "../App.css";
+// import 'bootswatch/dist/slate/bootstrap.min.css';
 import ShowEmployeeInfo from './ShowEmployeeInfo';
 function EmployeeList() {
   const [loading, setLoading] = useState(true);
@@ -27,17 +28,25 @@ function EmployeeList() {
     </div>
   }
   if(show){
-    return (<div className="container  justify-content-center d-flex flex-wrap mt-2 p-5">
-    {employees.map(employee => {
-      return (
-      <div onClick={changeComponent} className="card item col-3 m-3 p-4 text-center" key={employee.id} id={employee.id}>
-        Name: {employee.name}
-        <br />
-        Department: {employee.department}
+    return (
+        <div className="container center flex-wrap mt-2 p-5">
+        <h1>Employees List</h1>
+        <div className="container list center flex-wrap mt-2 p-4">
+          
+        {
+          employees.map(employee => {
+            return (
+            <div onClick={changeComponent} className="card item col-12 m-3 p-4 text-center" key={employee.id} id={employee.id}>
+              <p> <span>Name:</span>{employee.name}</p>
+              <br />
+              <p><span>Department:</span>{employee.department}</p>
+            </div>
+            )
+          })
+        }
       </div>
-      )
-    })}
-  </div>);
+      </div>
+  );
   } else {
     return <ShowEmployeeInfo employeeId={id} goBack={goBack}/>
   }

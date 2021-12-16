@@ -1,8 +1,38 @@
+*{
+  box-sizing: border-box;
+}
+.bg-secondary{
+  height: 90vh;
+}
+
+span {
+  font-weight: bolder;
+  margin-right: 4px;
+}
 .App {
   text-align: center;
 }
+.card-img{
+  width: 70%;
+}
 .item {
-  cursor: pointer
+  width: 40%;
+  
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+.info{
+  width: 40%;
+  
+}
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.list .item:hover{
+  cursor: pointer;
+  animation-name: transform;
+  transform: scale(1.1);
 }
 .App-logo {
   height: 40vmin;

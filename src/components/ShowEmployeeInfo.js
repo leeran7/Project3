@@ -14,16 +14,15 @@ const ShowEmployeeInfo = (props) => {
         return <p>Loading...</p>
     }
     return (
-        <div className="mx-auto mt-3" style={{ width: "30%"}}>
-            <div className="card container">
-                <img className="img-thumbnail" src={employee.photo} alt="profilepic"/>
-                <p className="card-title">Name: {employee.name}</p>
-                <p className="card-text">Start Date: {employee.startDate}</p>
-                <p className="card-text">Role: {employee.role}</p>
-                <p className="card-text">Department: {employee.department}</p>
+        <div className="card mx-auto m-5 item center p-4 flex-column align-items-center info">
+            <span>Employee</span><h1 className='pt-2'>{employee.name}</h1>
+            <div className="container center flex-column p-5">
+                <img className="card-img pb-5" src={employee.photo} alt="profile pic"/>
+                <p className="card-text"><span>Start Date:</span> {employee.startDate}</p>
+                <p className="card-text"><span>Role:</span> {employee.role}</p>
+                <p className="card-text"><span>Department:</span> {employee.department}</p>
                 <button className="btn btn-primary" onClick={props.goBack}>Go Back</button>
             </div>
-            
         </div>
     );
 }
